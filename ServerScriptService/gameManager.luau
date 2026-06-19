@@ -32,11 +32,12 @@ game.Players.PlayerAdded:Connect(function(player)
 	local StagesWon = Instance.new("NumberValue")
 	StagesWon.Name = "Stages Won"
 	StagesWon.Parent = leaderstats
-	StagesWon.Value = data.StagesWon
+	StagesWon.Value = data.StagesWon or 0
+
 	local Cash = Instance.new("NumberValue")
 	Cash.Name = "Cash"
 	Cash.Parent = leaderstats
-	Cash.Value = data.Cash
+	Cash.Value = data.Cash or 0
 end)
 
 Players.PlayerRemoving:Connect(function(player)

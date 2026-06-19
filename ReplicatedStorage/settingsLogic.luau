@@ -1,6 +1,8 @@
 local settingsLogic = {
 	shadows = true,
-	nightTime = false
+	nightTime = false,
+	daytimeProgression = true,
+	lightToggleEnabled = false
 }
 
 return settingsLogic

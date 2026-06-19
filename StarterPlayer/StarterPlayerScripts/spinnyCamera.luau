@@ -3,8 +3,8 @@ local runService = game:GetService("RunService")
 local replicatedStorage = game:GetService("ReplicatedStorage")
 local mainMenuLogic = require(replicatedStorage.mainMenuLogic)
 local camera = game.Workspace.CurrentCamera
-local target = game.Workspace.target
-local anchor = game.Workspace.anchor
+local target = workspace.cameraFolder:WaitForChild("target")
+local anchor = workspace.cameraFolder:WaitForChild("anchor")
 
 local angle = 90
 local orbitRadius = 30
