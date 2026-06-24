@@ -1,7 +1,9 @@
 local Lighting = game:GetService("Lighting")
 local replicatedStorage = game:GetService("ReplicatedStorage")
 local soundService = game:GetService("SoundService")
-local settingsLogic = require(replicatedStorage:WaitForChild("settingsLogic"))
+local player = game.Players.LocalPlayer
+local daytimeProgressionValue = player:WaitForChild("PlayerData"):WaitForChild("DaytimeProgression")
+local nightStatus = player:WaitForChild("PlayerData"):WaitForChild("NightTime")
 
 local daySound = soundService.Ambiance:WaitForChild("Day")
 local nightSound = soundService.Ambiance:WaitForChild("Night")
@@ -16,9 +18,23 @@ local function getAlpha(t)
 end
 
 local function updateSound()
-	if not settingsLogic.daytimeProgression then daySound:Stop() nightSound:Stop() return end
+	
 	local t = Lighting.ClockTime
 	local alpha = getAlpha(t)
+	
+	if not daytimeProgressionValue.Value then
+		if nightStatus.Value then
+			if not nightSound.IsPlaying then nightSound:Play() end
+			nightSound.Volume = 0.5
+			daySound:Stop()
+		else
+			if not daySound.IsPlaying then daySound:Play() end
+			daySound.Volume = 1
+			nightSound:Stop()
+		end
+		return
+	end
+
 	if alpha < 1 then
 		if not daySound.IsPlaying then daySound:Play() end
 		daySound.Volume = 1 * (1 - alpha)

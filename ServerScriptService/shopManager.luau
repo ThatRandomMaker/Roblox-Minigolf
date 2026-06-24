@@ -1,9 +1,10 @@
-local remote = game.ReplicatedStorage:WaitForChild("shopOpen")
-local shopFeedback = game.ReplicatedStorage:WaitForChild("shopFeedback")
-local golfBallConfig = require(game.ReplicatedStorage:WaitForChild("golfBallConfig"))
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local remote = replicatedStorage.remoteEvents:WaitForChild("shopOpen")
+local shopFeedback = replicatedStorage.remoteEvents:WaitForChild("shopFeedback")
+local golfBallConfig = require(replicatedStorage.moduleScripts:WaitForChild("golfBallConfig"))
 
 remote.OnServerEvent:Connect(function(player, itemName)
-	local itemData = golfBallConfig.Items[itemName] or golfBallConfig.Trails[itemName] or golfBallConfig.Effects[itemName]
+	local itemData = golfBallConfig.Items[itemName] or golfBallConfig.Trails[itemName] or golfBallConfig.Effects[itemName] or golfBallConfig.golfSticks[itemName]
 	if not itemData then return end
 	
 	local slotValueName = nil
@@ -13,6 +14,8 @@ remote.OnServerEvent:Connect(function(player, itemName)
 		slotValueName = "trailChosen"
 	elseif golfBallConfig.Effects[itemName] then
 		slotValueName = "effectChosen"
+	elseif golfBallConfig.golfSticks[itemName] then
+		slotValueName = "stickChosen"
 	end
 	
 	if not slotValueName then return end
@@ -25,7 +28,7 @@ remote.OnServerEvent:Connect(function(player, itemName)
 	
 	if table.find(ownedTable, itemName) then
 		data[slotValueName].Value = itemName
-		print("Equipped" .. itemName .. slotValueName)
+		-- print("equipped" .. itemName .. slotValueName)
 		shopFeedback:FireClient(player, "Equip")
 		return
 	end
@@ -37,10 +40,10 @@ remote.OnServerEvent:Connect(function(player, itemName)
 		table.insert(ownedTable, itemName)
 		data.ownedItemsList.Value = table.concat(ownedTable, ",")
 		data[slotValueName].Value = itemName
-		print("got" .. itemName)
+		-- print("got" .. itemName)
 		shopFeedback:FireClient(player, "Purchase")
 	else 
-	print("not enough money or something failed i think")
+	-- print("not enough money or something failed i think")
 	shopFeedback:FireClient(player, "Error")
 	end
 end)

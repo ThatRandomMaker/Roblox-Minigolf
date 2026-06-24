@@ -1,6 +1,6 @@
 local badgeService = game:GetService("BadgeService")
 local replicatedStorage = game:GetService("ReplicatedStorage")
-local badgeMilestones = require(replicatedStorage:WaitForChild("progressionBadgeMilestones"))
+local badgeMilestones = require(replicatedStorage.moduleScripts:WaitForChild("progressionBadgeMilestones"))
 local Players = game:GetService("Players")
 
 
