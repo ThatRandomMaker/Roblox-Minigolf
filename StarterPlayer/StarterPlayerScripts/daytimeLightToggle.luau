@@ -16,12 +16,49 @@ local currentAlpha = 0
 local lamps = {}
 
 local function initprolamp(lampModel)
-	if not lampModel:FindFirstChild("lampPart") then return end
+	
+	local lampPart
+	
+	if lampModel:IsA("BasePart") then
+		lampPart = lampModel
+	else
+		lampPart = lampModel:FindFirstChild("lampPart")
+	end
+	
+	if not lampPart then
+		return warn("Object tagged streetLamp is missing a valid lampPart! " .. lampModel:GetFullName())
+	end
+	
+	local startColor = lampModel:GetAttribute("startColor")
+	local targetColor = lampModel:GetAttribute("targetColor")
+	local lampBrightness = lampModel:GetAttribute("lampBrightness")
+	
+	if not startColor then
+		startColor = Color3.fromRGB(0, 0, 0)
+		warn("hello no startColor for " .. lampModel:GetFullName() .. "!")
+	end
+	
+	if not targetColor then
+		targetColor = Color3.fromRGB(158, 153, 112)
+		warn("hello no targetColor for " .. lampModel:GetFullName() .. "!")
+	end
+		
+	if not lampBrightness then
+		lampBrightness = 1
+		warn("hello no lampBrightness for " .. lampModel:GetFullName() .. "!")
+	end
+	
 	local lampData = {
-		Part = lampModel:FindFirstChild("lampPart"),
+		Part = lampPart,
+		StartColor = startColor,
+		TargetColor = targetColor,
+		LampBrightness = lampBrightness,
 		Lights = {}
 	}
 	
+	if lampModel:IsA("Light") then
+		table.insert(lampData.Lights, lampModel)
+	end
 	for _, descendant in pairs(lampModel:GetDescendants()) do
 		if descendant:IsA("Light") then
 			table.insert(lampData.Lights, descendant)
@@ -40,11 +77,11 @@ local function updateLights(alpha)
 	currentAlpha = alpha
 	for _, lampData in pairs(lamps) do
 			for _, light in pairs(lampData.Lights) do
-				light.Brightness = (alpha^2) * 3
+				light.Brightness = (alpha^2) * lampData.LampBrightness
 				light.Enabled = (alpha > 0.05)
 			end
 		if lampData.Part and lampData.Part:IsA("BasePart") then
-			lampData.Part.Color = Color3.fromRGB(0,0,0):Lerp(Color3.fromRGB(158, 153, 112), alpha)
+			lampData.Part.Color = lampData.StartColor:Lerp(lampData.TargetColor, alpha)
 		end
 	end
 end

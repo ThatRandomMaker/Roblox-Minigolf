@@ -1,4 +1,3 @@
--- used only for main menu, added checks to not get a warning that the humanoid doesn't exist yet
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
@@ -11,3 +10,5 @@ local starterGui = game:GetService("StarterGui")
 
 starterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
 controls:Disable()
+
+script:Destroy()

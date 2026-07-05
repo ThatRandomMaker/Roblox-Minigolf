@@ -8,9 +8,9 @@ remote.OnClientEvent:Connect(function(actionType, clearBallPad)
 	local Label = Gui:WaitForChild("TextLabel")
 	
 	local function resetPad()
-		Label.Text = "Clear Ball"
+		Label.Text = ""
 		Label.TextColor3 = Color3.fromRGB(255, 0, 0)
-		clearBallPad.Color = Color3.fromRGB(255, 89, 89)
+		clearBallPad.Color = Color3.fromRGB(152, 53, 53)
 	end
 	
 	if actionType == "Cleared" then

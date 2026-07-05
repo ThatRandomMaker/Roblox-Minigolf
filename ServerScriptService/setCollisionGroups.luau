@@ -14,6 +14,10 @@ local function setupPlayerCollisionGroups (player)
 	PhysicsService:CollisionGroupSetCollidable(sg, "Default", false)
 	PhysicsService:CollisionGroupSetCollidable(sg, "Player", false)
 	PhysicsService:CollisionGroupSetCollidable(bg, "Player", false)
+	PhysicsService:CollisionGroupSetCollidable(bg, "invisWall", true)
+	PhysicsService:CollisionGroupSetCollidable(sg, "invisWall", false)
+	PhysicsService:CollisionGroupSetCollidable("Player", "invisWall", false)
+	
 	PhysicsService:CollisionGroupSetCollidable(sg, bg, true)
 	
 	for _, otherPlayer in ipairs(activePlayers) do

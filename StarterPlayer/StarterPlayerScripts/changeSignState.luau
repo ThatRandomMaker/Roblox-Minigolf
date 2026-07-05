@@ -14,7 +14,7 @@ local function updateSignState(signPart)
 	local function updateSign()
 		local list = string.split(completedStages.Value, ",")
 		if table.find(list, stageName) then
-			textLabel.Text = "Stage completed!"
+			textLabel.Text = "Stage complete!"
 			textLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
 		else
 			textLabel.Text = "Stage hasn't been completed yet!"

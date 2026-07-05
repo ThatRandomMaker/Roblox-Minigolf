@@ -49,4 +49,16 @@ function dataModule.Load(userId)
 	end
 end
 
+--[[
+-- warning, this WILL wipe the datastore for the selected user
+-- only uncomment it for testing purposes.
+local DataStoreService = game:GetService("DataStoreService")
+local myDataStore = DataStoreService:GetDataStore("GolfData")
+local userId = 657457379
+local success, err = pcall(function()
+myDataStore:RemoveAsync("Player_" .. userId)
+end)
+if success then print("wiped for Player_" .. userId) else warn("error: " .. tostring(err)) end
+]]
+
 return dataModule
