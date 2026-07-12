@@ -20,7 +20,8 @@ local function plrDataToSave(player)
 		["CompletedStages"] = getTable(player.PlayerData.CompletedStages.Value),
 		["Shadows"] = player.PlayerData.Shadows.Value,
 		["DaytimeProgression"] = player.PlayerData.DaytimeProgression.Value,
-		["NightTime"] = player.PlayerData.NightTime.Value
+		["NightTime"] = player.PlayerData.NightTime.Value,
+		["TutorialComplete"] = player.PlayerData.TutorialComplete.Value
 	}
 end
 
@@ -67,6 +68,10 @@ game.Players.PlayerAdded:Connect(function(player)
 	nightTime.Name = "NightTime"
 	nightTime.Value = if data.NightTime ~= nil then data.NightTime else false
 	
+	local tutorialComplete = Instance.new("BoolValue", playerData)
+	tutorialComplete.Name = "TutorialComplete"
+	tutorialComplete.Value = if data.TutorialComplete ~= nil then data.TutorialComplete else false
+	
 	local leaderstats = Instance.new("Folder")
 	leaderstats.Name = "leaderstats"
 	leaderstats.Parent = player
@@ -103,18 +108,27 @@ end)
 
 local serverClosing = false
 
-Players.PlayerRemoving:Connect(function(player)
-	if not serverClosing then
+local savedPlayers = {}
+
+local function savePlayerData(player)
+	if savedPlayers[player.UserId] then return end
+	savedPlayers[player.UserId] = true
+	
+	if player:FindFirstChild("PlayerData") and player:FindFirstChild("leaderstats") then
 		DataModule.Save(player.UserId, plrDataToSave(player))
 	end
+end
+
+Players.PlayerRemoving:Connect(function(player)
+		savePlayerData(player)
+		savedPlayers[player.UserId] = nil
 end)
 
 game:BindToClose(function()
 	local threads = {}
-	serverClosing = true
 	for _, player in pairs(Players:GetPlayers()) do
 		local thread = task.spawn(function()
-			DataModule.Save(player.UserId, plrDataToSave(player))
+			savePlayerData(player)
 		end)
 		table.insert(threads, thread)
 	end

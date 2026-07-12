@@ -14,7 +14,8 @@ function dataModule.GetStarterData()
 		["CompletedStages"] = {},
 		["Shadows"] = true,
 		["DaytimeProgression"] = true,
-		["NightTime"] = false
+		["NightTime"] = false,
+		["TutorialComplete"] = false
 	}
 end
 

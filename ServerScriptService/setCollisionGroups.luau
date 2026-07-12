@@ -5,7 +5,6 @@ local activePlayers = {}
 PhysicsService:RegisterCollisionGroup("Player")
 PhysicsService:CollisionGroupSetCollidable("Player", "Player", false)
 
-
 local function setupPlayerCollisionGroups (player)
 	local bg = "Ball_".. player.Name
 	local sg = "Stick_" .. player.Name
@@ -17,7 +16,7 @@ local function setupPlayerCollisionGroups (player)
 	PhysicsService:CollisionGroupSetCollidable(bg, "invisWall", true)
 	PhysicsService:CollisionGroupSetCollidable(sg, "invisWall", false)
 	PhysicsService:CollisionGroupSetCollidable("Player", "invisWall", false)
-	
+
 	PhysicsService:CollisionGroupSetCollidable(sg, bg, true)
 	
 	for _, otherPlayer in ipairs(activePlayers) do
