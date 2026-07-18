@@ -60,6 +60,6 @@ local success, err = pcall(function()
 myDataStore:RemoveAsync("Player_" .. userId)
 end)
 if success then print("wiped for Player_" .. userId) else warn("error: " .. tostring(err)) end
-]]
+--]]
 
 return dataModule
