@@ -1,0 +1,1 @@
+Grass is the main place in the game, desert and arcade are sub-places
