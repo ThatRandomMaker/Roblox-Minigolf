@@ -2,7 +2,8 @@
 
 -- stage 9 path
 
-local Stage_A9 = workspace:WaitForChild("Stage_A9")
+local Stages = workspace:WaitForChild("Stages")
+local Stage_A9 = Stages:WaitForChild("Stage_A9")
 local visualFolder = Stage_A9:WaitForChild("visualPart")
 local visualPath = visualFolder:WaitForChild("Union")
 print(visualPath)
@@ -26,7 +27,7 @@ end)
 
 -- stage 8 pads
 
-local Stage_A8 = workspace:WaitForChild("Stage_A8")
+local Stage_A8 = Stages:WaitForChild("Stage_A8")
 local padFolder = Stage_A8:WaitForChild("Pads")
 local soundPart = Stage_A8:WaitForChild("soundPart")
 local clickSound = soundPart:WaitForChild("click")
@@ -102,7 +103,7 @@ end)
 
 -- stage 7 spinning parts
 local runService = game:GetService("RunService")
-local Stage_A7 = workspace:WaitForChild("Stage_A7")
+local Stage_A7 = Stages:WaitForChild("Stage_A7")
 local spinningPartsFolder = Stage_A7:WaitForChild("spinningParts")
 
 
