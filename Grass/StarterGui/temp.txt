@@ -1,2 +1,0 @@
-Only serves as a placeholder for commits. Forgot to commit in steps, so this serves to make a commit.
-Side UI rework
