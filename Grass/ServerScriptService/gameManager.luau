@@ -21,7 +21,8 @@ local function plrDataToSave(player)
 		["Shadows"] = player.PlayerData.Shadows.Value,
 		["DaytimeProgression"] = player.PlayerData.DaytimeProgression.Value,
 		["NightTime"] = player.PlayerData.NightTime.Value,
-		["TutorialComplete"] = player.PlayerData.TutorialComplete.Value
+		["TutorialComplete"] = player.PlayerData.TutorialComplete.Value,
+		["isLightMode"] = player.PlayerData.isLightMode.Value
 	}
 end
 
@@ -67,6 +68,10 @@ game.Players.PlayerAdded:Connect(function(player)
 	local nightTime = Instance.new("BoolValue", playerData)
 	nightTime.Name = "NightTime"
 	nightTime.Value = if data.NightTime ~= nil then data.NightTime else false
+	
+	local isLightMode = Instance.new("BoolValue", playerData)
+	isLightMode.Name = "isLightMode"
+	isLightMode.Value = if data.isLightMode ~= nil then data.isLightMode else false
 	
 	local tutorialComplete = Instance.new("BoolValue", playerData)
 	tutorialComplete.Name = "TutorialComplete"
