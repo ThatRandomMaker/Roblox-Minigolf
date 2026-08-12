@@ -15,6 +15,7 @@ function dataModule.GetStarterData()
 		["Shadows"] = true,
 		["DaytimeProgression"] = true,
 		["NightTime"] = false,
+		["isLightMode"] = false,
 		["TutorialComplete"] = false
 	}
 end
