@@ -16,6 +16,7 @@ function dataModule.GetStarterData()
 		["DaytimeProgression"] = true,
 		["NightTime"] = false,
 		["isLightMode"] = false,
+		["currentHotkey"] = nil,
 		["TutorialComplete"] = false
 	}
 end
