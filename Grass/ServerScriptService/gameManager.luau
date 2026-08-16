@@ -74,9 +74,9 @@ game.Players.PlayerAdded:Connect(function(player)
 	isLightMode.Name = "isLightMode"
 	isLightMode.Value = if data.isLightMode ~= nil then data.isLightMode else false
 	
-	local currentHotkey = Instance.new("BoolValue", playerData)
+	local currentHotkey = Instance.new("StringValue", playerData)
 	currentHotkey.Name = "currentHotkey"
-	currentHotkey.Value = if data.currentHotkey ~= nil then tostring(data.currentHotkey) else nil
+	currentHotkey.Value = if data.currentHotkey ~= nil then tostring(data.currentHotkey) else ""
 	
 	local tutorialComplete = Instance.new("BoolValue", playerData)
 	tutorialComplete.Name = "TutorialComplete"
