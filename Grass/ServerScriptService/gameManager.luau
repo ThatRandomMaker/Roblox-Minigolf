@@ -23,6 +23,7 @@ local function plrDataToSave(player)
 		["NightTime"] = player.PlayerData.NightTime.Value,
 		["TutorialComplete"] = player.PlayerData.TutorialComplete.Value,
 		["currentHotkey"] = player.PlayerData.currentHotkey.Value,
+		["cameraMode"] = player.PlayerData.cameraMode.Value,
 		["isLightMode"] = player.PlayerData.isLightMode.Value
 	}
 end
@@ -73,6 +74,10 @@ game.Players.PlayerAdded:Connect(function(player)
 	local isLightMode = Instance.new("BoolValue", playerData)
 	isLightMode.Name = "isLightMode"
 	isLightMode.Value = if data.isLightMode ~= nil then data.isLightMode else false
+	
+	local cameraMode = Instance.new("BoolValue", playerData)
+	cameraMode.Name = "cameraMode"
+	cameraMode.Value = if data.cameraMode ~= nil then data.cameraMode else false
 	
 	local currentHotkey = Instance.new("StringValue", playerData)
 	currentHotkey.Name = "currentHotkey"
