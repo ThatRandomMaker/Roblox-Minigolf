@@ -32,7 +32,7 @@ Arcade environment:
 Arcade scripting & UI
 
 - [ ] Get scripts from grass/main place
-- [ ] Port UI from grass/main place and change colors for the UI.
+- [ ] Port UI from grass/main place and change colors for the UI
 
 
 
@@ -46,6 +46,8 @@ Arcade scripting & UI
 
 Grass UI:
 
-- [ ] Interactive buttons (with sfx and animations like buttons getting larger)
-- [ ] Shop UI spinning item previews
-- [ ] Tie UI visually together
+- [x] Interactive buttons (with sfx and animations like buttons getting larger)
+- [x] Shop UI spinning item previews
+- [x] Tie UI visually together
+- [x] UI/GUI overhaul
+- (~85% done) Light mode for most UI/GUI elements
