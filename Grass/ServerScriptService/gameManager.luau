@@ -4,6 +4,9 @@ local replicatedStorage = game:GetService("ReplicatedStorage")
 local autosaveIndicator = replicatedStorage.remoteEvents:WaitForChild("autosaveIndicator")
 local DataModule = require(ServerScriptService:WaitForChild("datastoreModule"))
 
+local memoryStoreService = game:GetService("MemoryStoreService")
+local sessionMap = memoryStoreService:GetHashMap("PlayerSessionData")
+
 local function plrDataToSave(player)
 	local function getTable(str)
 		if str == "" or str == nil then return {} end
@@ -29,7 +32,14 @@ local function plrDataToSave(player)
 end
 
 game.Players.PlayerAdded:Connect(function(player)
-	local data = DataModule.Load(player.UserId)
+	local userIdString = tostring(player.UserId)
+	
+	local recentData = nil
+	pcall(function()
+		recentData = sessionMap:GetAsync(userIdString)
+	end)
+	
+	local data = recentData or DataModule.Load(player.UserId) or {}
 	
 	local playerData = Instance.new("Folder")
 	playerData.Name = "PlayerData"
@@ -130,7 +140,14 @@ local function savePlayerData(player)
 	savedPlayers[player.UserId] = true
 	
 	if player:FindFirstChild("PlayerData") and player:FindFirstChild("leaderstats") then
-		DataModule.Save(player.UserId, plrDataToSave(player))
+		local saveData = plrDataToSave(player)
+		local userIdString = tostring(player.UserId)
+		
+		pcall(function()
+			sessionMap:SetAsync(userIdString, saveData, 60)
+		end)
+		
+		DataModule.Save(player.UserId, saveData)
 	end
 end
 
