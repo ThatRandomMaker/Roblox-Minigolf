@@ -11,9 +11,9 @@ Arcade stages:
 
 Arcade building:
 
-- [ ] Decide roughly how big the floor/building will be
-- [ ] Place stages inside the building
-- [ ] Make arcade machines
+- [x] Decide roughly how big the floor/building will be
+- [x] Place stages inside the building
+- [x] Make arcade machines
 - [ ] Place arcade machines in a pattern to not look like they repeat over and over
 - [ ] Building decoration (front and inside)
 - [ ] Interior lighting
@@ -50,4 +50,4 @@ Grass UI:
 - [x] Shop UI spinning item previews
 - [x] Tie UI visually together
 - [x] UI/GUI overhaul
-- (~85% done) Light mode for most UI/GUI elements
+- [x] Light mode for most UI/GUI elements
