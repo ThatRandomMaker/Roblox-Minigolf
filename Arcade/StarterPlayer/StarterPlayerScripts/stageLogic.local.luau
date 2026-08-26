@@ -25,11 +25,11 @@ task.spawn(function()
 end)
 
 
--- stage 8 pads
+-- stage 7 pads
 
-local Stage_A8 = Stages:WaitForChild("Stage_A8")
-local padFolder = Stage_A8:WaitForChild("Pads")
-local soundPart = Stage_A8:WaitForChild("soundPart")
+local Stage_A7 = Stages:WaitForChild("Stage_A7")
+local padFolder = Stage_A7:WaitForChild("Pads")
+local soundPart = Stage_A7:WaitForChild("soundPart")
 local clickSound = soundPart:WaitForChild("click")
 local switchSound = soundPart:WaitForChild("switch")
 local partTable = {
@@ -101,10 +101,10 @@ task.spawn(function()
 end)
 
 
--- stage 7 spinning parts
+-- stage 5 spinning parts
 local runService = game:GetService("RunService")
-local Stage_A7 = Stages:WaitForChild("Stage_A7")
-local spinningPartsFolder = Stage_A7:WaitForChild("spinningParts")
+local Stage_A5 = Stages:WaitForChild("Stage_A5")
+local spinningPartsFolder = Stage_A5:WaitForChild("spinningParts")
 
 
 local partData = {}
