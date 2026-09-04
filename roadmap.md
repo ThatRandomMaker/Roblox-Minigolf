@@ -14,8 +14,8 @@ Arcade building:
 - [x] Decide roughly how big the floor/building will be
 - [x] Place stages inside the building
 - [x] Make arcade machines
-- [ ] Place arcade machines in a pattern to not look like they repeat over and over
-- [ ] Building decoration (front and inside)
+- [x] Place arcade machines in a pattern to not look like they repeat over and over
+- 50% Building decoration (front and inside)
 - [ ] Interior lighting
 
 
