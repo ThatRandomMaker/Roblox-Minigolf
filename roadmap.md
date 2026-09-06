@@ -15,8 +15,12 @@ Arcade building:
 - [x] Place stages inside the building
 - [x] Make arcade machines
 - [x] Place arcade machines in a pattern to not look like they repeat over and over
-- 50% Building decoration (front and inside)
-- [ ] Interior lighting
+- [x] Interior lighting
+- [x] Interior building decoration
+- [x] Interior complete!
+- [ ] Exterior building decoration
+- [ ] Exterior complete
+
 
 
 
@@ -37,10 +41,10 @@ Arcade scripting & UI
 
 
 - [x] Sliding door for the entrance
-- [x] Ball dissapearing and sound effect for stage 2
+- [x] Ball disappearing and sound effect for stage 2
 - [x] Spinning obstacles for stage 7
-- [x] Appearing/dissapearing pads for stage 8
-- [x] Appearing/dissapearing path for stage 9
+- [x] Appearing/disappearing pads for stage 8
+- [x] Appearing/disappearing path for stage 9
 
 
 
