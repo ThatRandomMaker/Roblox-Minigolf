@@ -11,4 +11,3 @@ playSoundEvent.OnClientEvent:Connect(function(soundType)
 		dissapearSound:Play()
 	end
 end)
-

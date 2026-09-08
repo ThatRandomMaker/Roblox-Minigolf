@@ -1,7 +1,5 @@
 **Roadmap:**
 
-
-
 Arcade stages:
 
 - [x] Build stages 1-9
@@ -22,11 +20,13 @@ Arcade building:
 Arcade environment:
 - [x] Add parking lot lighting
 - [x] Add a few bushes to the grass patches
+- [ ] Tweak lighting
+- [ ] Add ambiance zones
 
 Arcade scripting & UI
 
-- [ ] Get scripts from grass/main place
-- [ ] Port UI from grass/main place and change colors for the UI
+- [x] Get scripts from grass/main place
+- [x] Port UI from grass/main place and change colors for the UI
 
 - [x] Sliding door for the entrance
 - [x] Ball disappearing and sound effect for stage 2

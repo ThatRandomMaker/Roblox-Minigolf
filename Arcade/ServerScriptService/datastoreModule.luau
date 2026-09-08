@@ -15,6 +15,9 @@ function dataModule.GetStarterData()
 		["Shadows"] = true,
 		["DaytimeProgression"] = true,
 		["NightTime"] = false,
+		["isLightMode"] = false,
+		["cameraMode"] = false,
+		["currentHotkey"] = nil,
 		["TutorialComplete"] = false
 	}
 end

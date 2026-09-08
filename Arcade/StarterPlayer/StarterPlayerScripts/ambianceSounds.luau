@@ -17,6 +17,7 @@ local function getAlpha(t)
 	return rawAlpha * rawAlpha * (3-2 * rawAlpha)
 end
 
+
 local function updateSound()
 	
 	local t = Lighting.ClockTime
