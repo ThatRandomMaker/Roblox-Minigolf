@@ -7,8 +7,6 @@ Arcade stages:
 - [x] Build stages 1-9
 - [x] Test all stages to check if signs are set up correctly, and if no collision or spawning bugs occur
 
-
-
 Arcade building:
 
 - [x] Decide roughly how big the floor/building will be
@@ -18,27 +16,17 @@ Arcade building:
 - [x] Interior lighting
 - [x] Interior building decoration
 - [x] Interior complete!
-- [ ] Exterior building decoration
-- [ ] Exterior complete
-
-
-
+- [x] Exterior building decoration
+- [x] Exterior complete
 
 Arcade environment:
-
-- [ ] Add parking lot lighting
-- [ ] Make parking lot cars
-- [ ] Add a few bushes to the grass patches
-- [ ] Somehow make driving cars on the road (likely last to be made)
-
-
+- [x] Add parking lot lighting
+- [x] Add a few bushes to the grass patches
 
 Arcade scripting & UI
 
 - [ ] Get scripts from grass/main place
 - [ ] Port UI from grass/main place and change colors for the UI
-
-
 
 - [x] Sliding door for the entrance
 - [x] Ball disappearing and sound effect for stage 2
