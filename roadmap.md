@@ -20,8 +20,8 @@ Arcade building:
 Arcade environment:
 - [x] Add parking lot lighting
 - [x] Add a few bushes to the grass patches
-- [ ] Tweak lighting
-- [ ] Add ambiance zones
+- [x] Tweak lighting
+- [x] Add ambiance zones
 
 Arcade scripting & UI
 

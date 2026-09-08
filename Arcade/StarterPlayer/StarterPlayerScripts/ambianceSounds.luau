@@ -1,12 +1,21 @@
 local Lighting = game:GetService("Lighting")
 local replicatedStorage = game:GetService("ReplicatedStorage")
+local tweenService = game:GetService("TweenService")
 local soundService = game:GetService("SoundService")
-local player = game.Players.LocalPlayer
-local daytimeProgressionValue = player:WaitForChild("PlayerData"):WaitForChild("DaytimeProgression")
-local nightStatus = player:WaitForChild("PlayerData"):WaitForChild("NightTime")
 
-local daySound = soundService.Ambiance:WaitForChild("Day")
-local nightSound = soundService.Ambiance:WaitForChild("Night")
+local Player = game.Players.LocalPlayer
+local playerData = Player:WaitForChild("PlayerData")
+local daytimeProgressionValue = playerData:WaitForChild("DaytimeProgression")
+local nightStatus = playerData:WaitForChild("NightTime")
+
+local Ambiance = soundService:WaitForChild("Ambiance")
+local daySound = Ambiance:WaitForChild("Day")
+local nightSound = Ambiance:WaitForChild("Night")
+local indoorSound = Ambiance:WaitForChild("Indoor")
+
+local isIndoors = false
+local updateIndoor = replicatedStorage.remoteEvents:WaitForChild("updateIndoor")
+local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
 
 local function getAlpha(t)
 	local rawAlpha = 0
@@ -17,11 +26,40 @@ local function getAlpha(t)
 	return rawAlpha * rawAlpha * (3-2 * rawAlpha)
 end
 
+local function Indoor()
+	if nightSound.IsPlaying then
+		local Tween = tweenService:Create(nightSound, tweenInfo, {Volume = 0})
+		
+		indoorSound.Volume = 0
+		tweenService:Create(indoorSound, tweenInfo, {Volume = 0.5}):Play()
+		Tween:Play()
+		Tween.Completed:Wait()
+		
+		nightSound:Stop()
+	elseif daySound.IsPlaying then
+		local Tween = tweenService:Create(daySound, tweenInfo, {Volume = 0})
+
+		indoorSound.Volume = 0
+		tweenService:Create(indoorSound, tweenInfo, {Volume = 0.5}):Play()
+		Tween:Play()
+		Tween.Completed:Wait()
+		
+		daySound:Stop()
+	end
+	
+	indoorSound:Play()
+end
 
 local function updateSound()
+	if isIndoors then
+		Indoor()
+		return
+	end
 	
 	local t = Lighting.ClockTime
 	local alpha = getAlpha(t)
+	
+	if indoorSound.IsPlaying then indoorSound:Stop() end
 	
 	if not daytimeProgressionValue.Value then
 		if nightStatus.Value then
@@ -49,7 +87,31 @@ local function updateSound()
 	else 
 		nightSound:Stop()
 	end
+end
+
+updateIndoor.OnClientEvent:Connect(function(newValue)
+	if isIndoors ~= newValue then
+		isIndoors = newValue
+		updateSound()
+	end
+end)
+
+-- changing to outdoor ambiance upon reset
+local function onCharacterAdded(Character)
+	local Humanoid = Character:WaitForChild("Humanoid")
 	
+	Humanoid.Died:Connect(function()
+		print("ded")
+		
+		isIndoors = false
+		updateSound()
+	end)
+end
+
+Player.CharacterAdded:Connect(onCharacterAdded)
+
+if Player.Character then
+	onCharacterAdded(Player.Character)
 end
 
 Lighting:GetPropertyChangedSignal("ClockTime"):Connect(updateSound)
