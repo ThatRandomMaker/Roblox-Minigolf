@@ -15,4 +15,4 @@ Desert scripting/UI & GUI
 - [x] Port scripts for stages to work
 - [x] Update clearPadUI/spawnPadUI scripts to also change the shadow label for stage status
 - [x] Change clearPadUI/spawnPadUI scripts to use a different font
-- [ ] Port UI from arcadeMap
+- [x] Port UI from arcadeMap
