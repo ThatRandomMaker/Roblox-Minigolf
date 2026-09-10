@@ -3,7 +3,7 @@
 Desert stages:
 
 - [x] Build stages 1-5
-- [ ] Test all stages to check if signs are set up correctly, and if no collision or spawning bugs occur
+- [x] Test all stages to check if signs are set up correctly, and if no collision or spawning bugs occur
 
 Desert environment:
 - [ ] Make a large base with particles
@@ -12,6 +12,7 @@ Desert environment:
 - [ ] Tweak lighting
 
 Desert scripting/UI & GUI
-- [ ] Port scripts for stages to work
+- [x] Port scripts for stages to work
+- [ ] Update clearPadUI/spawnPadUI scripts to also change the shadow label for stage status
 - [ ] Change clearPadUI/spawnPadUI scripts to use a different font
 - [ ] Port UI from arcadeMap
