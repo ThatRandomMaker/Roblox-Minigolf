@@ -16,6 +16,7 @@ local function updateSignState(signPart)
 	local surfaceGui = signPart:FindFirstChildWhichIsA("SurfaceGui")
 	if not surfaceGui then return end
 	local textLabel = surfaceGui:FindFirstChild("statusLabel")
+	local shadowTextLabel = surfaceGui:FindFirstChild("statusLabelShadow")
 	local stageName = signPart:GetAttribute("stageName")
 	
 	local function updateSign()
@@ -23,9 +24,13 @@ local function updateSignState(signPart)
 		if table.find(list, stageName) then
 			textLabel.Text = "Stage complete!"
 			textLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+			
+			shadowTextLabel.Text = "Stage complete!"
 		else
 			textLabel.Text = "Not complete!"
 			textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+			
+			shadowTextLabel.Text = "Not complete!"
 		end
 	end
 	
