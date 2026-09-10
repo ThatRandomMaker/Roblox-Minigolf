@@ -7,7 +7,7 @@ local function resetSpawnPad(spawnPad, label)
 	if not spawnPad or not label then return end
 	label.Visible = true
 	label.Text = ""
-	spawnPad.Color = Color3.fromRGB(81, 162, 81)
+	spawnPad.Color = Color3.fromRGB(152, 130, 51)
 	activeTimers[spawnPad] = nil
 end
 
@@ -49,8 +49,8 @@ updateSpawnPad.OnClientEvent:Connect(function(actionType, spawnPad, extraData)
 		end)
 	elseif actionType == "Success" then
 		label.Text = "Ball Spawned!"
-		label.TextColor3 = Color3.fromRGB(0, 255, 0)
-		spawnPad.Color = Color3.fromRGB(81, 162, 81)
+		label.TextColor3 = Color3.fromRGB(144, 98, 49)
+		spawnPad.Color = Color3.fromRGB(255, 126, 34)
 		
 		activeTimers[spawnPad] = task.delay(0.6, function()
 			if label.Text == "Ball Spawned!" then
