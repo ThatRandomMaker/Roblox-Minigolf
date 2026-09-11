@@ -15,7 +15,7 @@ A multiple environment minigolf game built in Roblox Studio.
 ## Features:
 - 3 unique maps (Grass, Desert, Arcade) featuring 22 stages in total
 - Short and simple tutorial for new players
-- In game shop using cash for buying new golf balls, clubs, effects and trails
+- In-game shop using cash for buying new golf balls, clubs, effects and trails
 - Badge rewards for reaching certain milestones (for example, 5 stages complete)
 - Daytime cycle with ambiance changing depending on day or night
 - Customizable UI settings for the main menu and in-game UI/GUI
@@ -39,7 +39,7 @@ git clone https://github.com/ThatRandomMaker/Roblox-Minigolf.git
 The golf club and golf ball `CollisionGroup`(s) are set up by a server script. Each player gets their own collision group in their name, which prevents griefing and the golf club interacting with anything but the ball. Also, the group gets removed upon leaving for cleanup.
 
 ### Teleports:
-The game uses Roblox's inbuilt `TeleportService` to teleport between places. The receiving place has a localscript in ReplicatedFirst to keep the UI after joining, otherwise it'd be destroyed.
+The game uses Roblox's inbuilt `TeleportService` to teleport between places. The receiving place has a localscript in `ReplicatedFirst` to keep the UI after joining, otherwise it'd be destroyed.
 
 ### Settings:
 Settings are saved under a folder named PlayerData parented to the player. They are booleans (except for the hotkey and in-game values) which get changed upon enabling/disabling the setting.
