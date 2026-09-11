@@ -1,10 +1,11 @@
 # Roblox Minigolf
-A multiple environment, minigolf game built in Roblox Studio.
+A multiple environment minigolf game built in Roblox Studio.
 
 ![Icon](img/gameicon.png "Icon")
 
 ## How to play:
-- **A**: If you have a Roblox account that is 16+ FAE/ID verified, play through [this link](https://www.roblox.com/games/11200475351/Minigolf).
+- **A**: If you have a Roblox account that is 16+ FAE/ID verified, play using [this link](https://www.roblox.com/games/11200475351/Minigolf).
+  - If you don't, to make a Roblox account, visit [roblox.com](https://www.roblox.com), and after signing up, complete the verification steps in settings.
   - The required **F**acial **A**ge **E**stimation/Identification check is out of my control.
 - **B**: If it isn't verified, then clone the repository and set it up in Roblox Studio. (Refer to "How to run & edit locally")
 - **C**: Alternatively, a gameplay demo can be seen [here.](https:/workinprogress)
@@ -13,7 +14,7 @@ A multiple environment, minigolf game built in Roblox Studio.
 
 ## Features:
 - 3 unique maps (Grass, Desert, Arcade) featuring 22 stages in total
-- Short tutorial for new players
+- Short and simple tutorial for new players
 - In game shop using cash for buying new golf balls, clubs, effects and trails
 - Badge rewards for reaching certain milestones (for example, 5 stages complete)
 - Daytime cycle with ambiance changing depending on day or night
@@ -29,7 +30,7 @@ A multiple environment, minigolf game built in Roblox Studio.
 git clone https://github.com/ThatRandomMaker/Roblox-Minigolf.git
 ```
 3. Open Studio, create an empty Baseplate and import assets from the map folder you want to play/edit.
-4. Set up Collision Groups using the collisionGroups.txt guide in the map directory.
+4. Set up Collision Groups using the collisionGroups.md guide in the "Grass" folder.
 > Note: Custom sounds/audio are not public, so they won't work in your local instance. They will need to be replaced or removed.
 
 ## How it works:
