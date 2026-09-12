@@ -9,6 +9,7 @@ Desert map:
 Game:
 - [x] Redesign teleport UI with animations
 - [x] Change music played while loading
+- [ ] Fade in music when joining from a teleport
 
 Github repo:
 - [ ] Finish README with a gameplay demo
