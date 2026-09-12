@@ -8,7 +8,7 @@ A multiple environment minigolf game built in Roblox Studio.
   - If you don't, to make a Roblox account, visit [roblox.com](https://www.roblox.com). After signing up, complete the verification steps in the settings page.
   - The required **F**acial **A**ge **E**stimation/Identification check is out of my control.
 - **B**: If it isn't verified, then clone the repository and set it up in Roblox Studio. (Refer to "How to run & edit locally")
-- **C**: Alternatively, a gameplay demo can be seen [here.](https://youtu.be/--2CExAM6_w)
+- **C**: Alternatively, a gameplay demo can be seen [here](https://youtu.be/--2CExAM6_w).
 
 ---
 
