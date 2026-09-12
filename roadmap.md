@@ -8,7 +8,7 @@ Desert map:
 
 Game:
 - [x] Redesign teleport UI with animations
-- [ ] Change music played while loading
+- [x] Change music played while loading
 
 Github repo:
 - [ ] Finish README with a gameplay demo
