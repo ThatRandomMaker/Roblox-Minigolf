@@ -9,7 +9,8 @@ local playerGui = player:WaitForChild("PlayerGui")
 local transitionUI = playerGui:WaitForChild("transitionUI")
 local transitionFrame = transitionUI:WaitForChild("transitionFrame")
 
-local soundTweenInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+local soundTweenOutInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+local soundTweenInInfo = TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.In)
 -- side ribbon anim
 local ribbonIn = TweenInfo.new(2, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut)
 local ribbonOut = TweenInfo.new(2, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut)
@@ -66,8 +67,6 @@ local infoFrame = canvasGroup:WaitForChild("infoFrame")
 local loadingLabel = infoFrame:WaitForChild("statusLabel")
 local loadingLabelShadow = infoFrame:WaitForChild("Shadow"):WaitForChild("statusLabelShadow")
 
-sound:Play()
-
 local dotTask = task.spawn(function()
 	local Dots = {".", "..", "...", ""}
 	local i = 0
@@ -80,16 +79,20 @@ local dotTask = task.spawn(function()
 	end
 end)
 
-task.spawn(function()
-	local assetsToLoad = {playerGui, player.Backpack, player.PlayerScripts}
-	local success, err = pcall(function()
-		contentProvider:PreloadAsync(assetsToLoad)
-	end)
-	
-	if not success then
-		warn("Error preloading but eh, the game will work won't it? /j" .. tostring(err))
-	end
-end)	
+sound.Volume = 0
+sound:Play()
+local soundTween = tweenService:Create(sound, soundTweenInInfo, {Volume = 0.9})
+soundTween:Play()
+soundTween.Completed:Wait()
+
+local assetsToLoad = {playerGui, player.Backpack, player.PlayerScripts}
+local success, err = pcall(function()
+	contentProvider:PreloadAsync(assetsToLoad)
+end)
+
+if not success then
+	warn("Error preloading but eh, the game will work won't it? /j" .. tostring(err))
+end	
 
 task.cancel(dotTask)
 task.wait()
@@ -99,9 +102,9 @@ loadingLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
 task.wait(2)
 ribbonAnimation(arrivingGui)
 
-local soundTween = tweenService:Create(sound, soundTweenInfo, {Volume = 0})
-soundTween:Play()
-soundTween.Completed:Wait()
+local soundTween2 = tweenService:Create(sound, soundTweenOutInfo, {Volume = 0})
+soundTween2:Play()
+soundTween2.Completed:Wait()
 
 sound:Stop()
 

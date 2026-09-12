@@ -9,7 +9,8 @@ Desert map:
 Game:
 - [x] Redesign teleport UI with animations
 - [x] Change music played while loading
-- [ ] Fade in music when joining from a teleport
+- [x] Fade in music when joining from a teleport
+- [ ] Add fake shadow text to loadUI (loadGui)
 
 Github repo:
 - [ ] Finish README with a gameplay demo
