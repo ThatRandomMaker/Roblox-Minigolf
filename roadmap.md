@@ -11,6 +11,7 @@ Game:
 - [x] Change music played while loading
 - [x] Fade in music when joining from a teleport
 - [x] Add fake shadow text to loadUI (loadGui)
+- [ ] Replace old badges
 
 Github repo:
 - [x] Finish README with a gameplay demo
