@@ -3,11 +3,18 @@ A multiple environment minigolf game built in Roblox Studio.
 
 ![Icon](img/gameicon.png "Icon")
 
+## Platforms supported:
+- Windows
+- Mac
+- Linux (Sober, **unofficial**)
+
 ## How to play:
 - **A**: If you have a Roblox account that is 16+ FAE/ID verified, play using [this link](https://www.roblox.com/games/11200475351/Minigolf).
-  - If you don't, to make a Roblox account, visit [roblox.com](https://www.roblox.com). After signing up, complete the verification steps in the settings page.
-  - The required **F**acial **A**ge **E**stimation/Identification check is out of my control.
-- **B**: If it isn't verified, then clone the repository and set it up in Roblox Studio. (Refer to "How to run & edit locally")
+  - If you don't, to make a Roblox account, visit [roblox.com](https://www.roblox.com). 
+  - After signing up, complete the verification steps in Settings -> Account Info. 
+      - The required **F**acial **A**ge **E**stimation/Identification check is out of my control.
+  - Upon pressing play, installation of the client will be automatically prompted.
+- **B**: If your account isn't verified, then clone the repository and set it up in Roblox Studio. (Refer to "How to run & edit locally")
 - **C**: Alternatively, a gameplay demo can be seen [here](https://youtu.be/--2CExAM6_w).
 
 ---
