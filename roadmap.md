@@ -13,4 +13,4 @@ Game:
 - [x] Add fake shadow text to loadUI (loadGui)
 
 Github repo:
-- [ ] Finish README with a gameplay demo
+- [x] Finish README with a gameplay demo
