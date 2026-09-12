@@ -10,7 +10,7 @@ Game:
 - [x] Redesign teleport UI with animations
 - [x] Change music played while loading
 - [x] Fade in music when joining from a teleport
-- [ ] Add fake shadow text to loadUI (loadGui)
+- [x] Add fake shadow text to loadUI (loadGui)
 
 Github repo:
 - [ ] Finish README with a gameplay demo
