@@ -1,13 +1,14 @@
 **Roadmap:**
 
 Arcade map:
-- [ ] Fix path in stage 9 disappearing when daytime cycle is on
+- [x] Fix path in stage 9 disappearing when daytime cycle is on
 
 Desert map:
-- [ ] Redesign tutorial GUI a little
+- [x] Redesign tutorial GUI a little
 
 Game:
-- Redesign teleport UI with animations
+- [x] Redesign teleport UI with animations
+- [ ] Change music played while loading
 
 Github repo:
 - [ ] Finish README with a gameplay demo

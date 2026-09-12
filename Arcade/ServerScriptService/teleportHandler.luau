@@ -2,7 +2,7 @@ local replicatedStorage = game:GetService("ReplicatedStorage")
 local remote = replicatedStorage.remoteEvents:WaitForChild("teleportHandler")
 local teleportService = game:GetService("TeleportService")
 
-remote.OnServerEvent:Connect(function(player, placeID, buttonName)
+remote.OnServerEvent:Connect(function(player, placeID, placeName)
 	if not placeID then return end
 	local maxRetry = 3
 	local success = false
@@ -16,7 +16,7 @@ remote.OnServerEvent:Connect(function(player, placeID, buttonName)
 			statusText = "Reserving new server..."
 		end
 		
-		if i > 1 then remote:FireClient(player, statusText, buttonName) end
+		if i > 1 then remote:FireClient(player, statusText, placeName) end
 		
 	success, result = pcall(function()
 		local teleportOptions = Instance.new("TeleportOptions")
@@ -27,7 +27,7 @@ remote.OnServerEvent:Connect(function(player, placeID, buttonName)
 	task.wait(1.5)
 end
 	if not success then
-		remote:FireClient(player, "failed_Final", buttonName)
+		remote:FireClient(player, "failed_Final", placeName)
 		warn("teleport failed " .. maxRetry .. " attempts " .. tostring(result))
 	end
 end)
