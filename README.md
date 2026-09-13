@@ -64,11 +64,11 @@ Listens to `Lighting.ClockTime`  and changes ambiance type and volume depending 
 ## Screenshot gallery
 A small preview of the game's main sights.
 
-![Grass map](img/Grass.png "Grass map")
-
-![Arcade map](img/Arcade.png "Arcade map")
-
-![Desert map](img/Desert.png "Desert map")
+<p float="left">
+    <img src="img/Grass.png" alt="Grass map" width="60%">
+    <img src="img/Arcade.png" alt="Arcade map" width="60%">
+    <img src="img/Desert.png" alt="Desert map" width="60%">
+</p>
 
 ## License & Credits:
 Distributed under the Apache License 2.0 License. Refer to LICENSE for more information.
