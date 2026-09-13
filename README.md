@@ -35,7 +35,7 @@ A multiple environment minigolf game built in Roblox Studio.
 - 3 unique maps (Grass, Desert, Arcade) featuring 22 stages in total
 - Short and simple tutorial for new players
 - In-game shop using cash for buying new golf balls, clubs, effects and trails
-- Badge rewards for reaching certain milestones (for example, 5 stages complete)
+- Badge rewards for reaching certain milestones (for example, 10 stages complete)
 - Daytime cycle with ambiance changing depending on day or night
 - Customizable UI settings for the main menu and in-game UI/GUI
 - Hide UI hotkey
