@@ -7,6 +7,7 @@ A multiple environment minigolf game built in Roblox Studio.
 - Windows
 - Mac
 - Linux (Sober, **unofficial**)
+- Android & IOS
 
 ## How to play:
 - **A**: If you have a Roblox account that is 16+ FAE/ID verified, play using **[this link](https://www.roblox.com/games/11200475351/Minigolf)**.
@@ -16,6 +17,17 @@ A multiple environment minigolf game built in Roblox Studio.
   - Upon pressing play, installation of the client will be automatically prompted.
 - **B**: If your account isn't verified, then clone the repository and set it up in Roblox Studio. (Refer to "How to run & edit locally")
 - **C**: Alternatively, a gameplay demo can be seen [here](https://youtu.be/--2CExAM6_w).
+
+## Controls:
+
+| Control | PC | Mobile |
+| :--- | :--- | :--- |
+| **Movement** | W, A, S, D or arrow keys | Drag (bottom left) |
+| **Jump** | Space | Jump button |
+| **Rotate camera** | Right-click or left/right arrow keys | Swipe anywhere (outside movement zone) |
+| **Zoom in/out** | Scroll wheel or I/O | Pinch screen |
+| **Equip tool** | 1 or click tool icon | Tap tool icon |
+| **Roblox menu** | Esc or click Roblox logo | Tap Roblox logo |
 
 ---
 
