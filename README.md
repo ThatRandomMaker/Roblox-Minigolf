@@ -61,6 +61,15 @@ Gets incremented automatically with `RunService.Heartbeat`. The light color is t
 Ambiance:
 Listens to `Lighting.ClockTime`  and changes ambiance type and volume depending on what time it is. If daytime progression is turned off, then it doesn't change volume and only plays the ambiance set by changing `nightStatus.Value`
 
+## Screenshot gallery
+A small preview of the game's main sights.
+
+![Grass map](img/Grass.png "Grass map")
+
+![Arcade map](img/Arcade.png "Arcade map")
+
+![Desert map](img/Desert.png "Desert map")
+
 ## License & Credits:
 Distributed under the Apache License 2.0 License. Refer to LICENSE for more information.
 
