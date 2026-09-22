@@ -29,6 +29,8 @@ A multiple environment minigolf game built in Roblox Studio.
 | **Equip tool** | 1 or click tool icon | Tap tool icon |
 | **Roblox menu** | Esc or click Roblox logo | Tap Roblox logo |
 
+> Note: To hold the Golf Club (without it moving when you move), zoom in to first person, or enable shift lock in the Roblox menu settings!
+
 ---
 
 ## Features:
