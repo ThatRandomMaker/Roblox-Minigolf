@@ -89,4 +89,4 @@ Distributed under the Apache License 2.0 License. Refer to LICENSE for more info
 * stravant - ResizeAlign, Redupe, GapFill
 * ZacBytes - AutoScale Lite
 
-<small><sup>made for hack club [stardance](stardance.hackclub.com)</sup></small>
+<small><sup>made for hack club [stardance](https://stardance.hackclub.com)</sup></small>
