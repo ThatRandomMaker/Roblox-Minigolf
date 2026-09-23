@@ -88,3 +88,4 @@ Distributed under the Apache License 2.0 License. Refer to LICENSE for more info
 * XAXA - ThreeDText 2, Brushtool 2.1
 * stravant - ResizeAlign, Redupe, GapFill
 * ZacBytes - AutoScale Lite
+<small><sup>made for hack club</sup></small>
